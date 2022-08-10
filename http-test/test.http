@@ -1,0 +1,32 @@
+### 바코드 생성
+POST http://localhost:8080/api/v1/barcodes
+Content-Type: application/json
+
+{
+  "userId" : 999999999
+}
+
+### 포인트 적립
+POST http://localhost:8080/api/v1/point
+Content-Type: application/json
+
+{
+  "storeId": 1,
+  "barcode": "2309602521",
+  "pointAmount": 100
+}
+
+
+### 포인트 차감
+PUT http://localhost:8080/api/v1/point
+Content-Type: application/json
+
+{
+  "storeId": 1,
+  "barcode": "2309602521",
+  "pointAmount": 10
+}
+
+### 기간별 내역 조회
+GET http://localhost:8080/api/v1/point-history?barcode=2309602521&startDate=2022-07-14&endDate=2022-12-31&page=0&pageSize=10
+Content-Type: application/json
